@@ -458,7 +458,12 @@
                                                           PublishingConstants.WorkflowFields.WorkflowState,
                                                           null);
 
-                        if (!nextVarianceWorkflowState.HasValue || _publishableStates.ContainsKey(nextVarianceWorkflowState.Value))
+                        bool nextVariancePublishable = !ParseSitecoreBoolField(
+                                                            nextVariance.Value,
+                                                            PublishingConstants.PublishingFields.Versioned.HideVersion,
+                                                            false);
+
+                        if (nextVariancePublishable && (!nextVarianceWorkflowState.HasValue || _publishableStates.ContainsKey(nextVarianceWorkflowState.Value)))
                         {
                             validTo = ParseSitecoreDateField(nextVariance.Value,
                                                              PublishingConstants.PublishingFields.Versioned.ValidFrom,
