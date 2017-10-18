@@ -13,7 +13,7 @@
     using Sitecore.Framework.Publishing.TemplateGraph;
     using Sitecore.Framework.Publishing.Data;
     using Sitecore.Framework.Publishing.Item;
-    class IncrementalPublishHandler : Sitecore.Framework.Publishing.PublishJobQueue.Handlers.IncrementalPublishHandler
+    public class IncrementalPublishHandler : Sitecore.Framework.Publishing.PublishJobQueue.Handlers.IncrementalPublishHandler
     {
         public IncrementalPublishHandler(
             IRequiredPublishFieldsResolver requiredPublishFieldsResolver,
